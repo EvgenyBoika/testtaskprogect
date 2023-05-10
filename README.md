@@ -51,27 +51,35 @@ git clone https://github.com/EvgenyBoika/testtaskprogect.git
 2. Go to cdkcode:
 
 ```
+mkdir cdkcode
 cd cdkcode
 ```
 3. Create a new CDK project using Python:
 ```
 cdk init app --language python
+rm app.py
+cd ..
+cp app.py cdkcode
+cd cdkcode
 ```
-
+4. Install the required CDK packages:
+```
+pip3 install aws-cdk.aws-eks aws-cdk.core aws-cdk-lib
+pip3 install --upgrade constructs
+```
 Deploy the application using the AWS CDK:
 
 ```
 cdk synth
 cdk deploy
-
 ```
+In ouput of console you have a config to connect to your cluster
 
 Clean Up
 To delete the resources created by this application, run:
 
 ```
 cdk destroy
-
 ```
 
 Deploying Hello Kubernetes on an Amazon EKS Cluster using Helm
@@ -82,70 +90,54 @@ A running Amazon EKS cluster.
 kubectl installed and configured to work with your EKS cluster.
 Helm installed and configured to work with your EKS cluster.
 Deployment Steps
-1. Clone the Hello Kubernetes repository:
+1. Go to the Hello Kubernetes repository:
 ```
-git clone https://github.com/paulbouwer/hello-kubernetes.git
 cd hello-kubernetes/deploy/helm
-
 ```
 2. Deploy it using command:
-
 ```
 helm install --create-namespace --namespace hello-kubernetes hello-world ./hello-kubernetes --set service.type=LoadBalancer
-
 ```
 To access the application use this command (this is ip adress in your browser):
 ```
 kubectl get svc -n hello-kubernetes hello-kubernetes-hello-world -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
-
 ```
 Building the Flink WordCount Example
 This guide will walk you through building the WordCount example from the Apache Flink project.
 
 Prerequisites
 1. Install the Java Development Kit (JDK) version 8 or later.
-
 ```
 sudo apt update
 sudo apt install openjdk-11-jdk
-
 ```
-
 2. Install Maven.
-
 ```
 sudo apt update
 sudo apt install maven
-
 ```
-
 Building the WordCount Example
-1. Clone the Apache Flink repository:
+1. Go to the Apache Flink repository:
 
 ```
-git clone https://github.com/apache/flink.git
 cd flink
-
 ```
 
 2. Navigate to the Flink streaming examples directory:
 
 ```
 cd flink-examples/flink-examples-streaming
-
 ```
 
 3. Build the Flink streaming examples with Maven:
 
 ```
 mvn clean install -DskipTests
-
 ```
 4. Go to target directory 
 
 ```
 cd target
-
 ```
 5. Here is WordCount.jar
 
@@ -162,10 +154,8 @@ Helm installed and configured to work with your EKS cluster.
 
 ```
 cd flinkk8s
-
 ```
 2. helm install:
-
 ```
 helm install flink8schart-test flink8schart
 ```
@@ -173,8 +163,7 @@ helm install flink8schart-test flink8schart
 
 ```
 kubectl get svc flink-jobmanager-rest -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
-
 ```
-4. Run this EXTERNAL-IP:8081
+4. Run this <EXTERNAL-IP>:8081
 
 5. Using web ui Add your WordCount.jar in flink
