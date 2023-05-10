@@ -26,14 +26,18 @@ aws configure
 
 ```
 sudo apt update
-sudo apt install python3.7
+sudo apt install python3
 ```
 
 5. Install pip3.
 
 ```
 sudo apt install python3-pip
+```
+6. Istall nodejs:
 
+```
+sudo apt install nodejs
 ```
 Deployment Steps
 
@@ -46,6 +50,7 @@ git clone https://github.com/EvgenyBoika/testtaskprogect.git
 Deploy the application using the AWS CDK:
 
 ```
+cdk synth
 cdk deploy
 
 ```
