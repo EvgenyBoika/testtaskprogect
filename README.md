@@ -145,6 +145,7 @@ Deploying Flink on Amazon EKS HA
 This guide will walk you through deploying a Flink cluster in High Availability (HA) cluster on an Amazon EKS cluster using your custom Helm chart.
 
 Prerequisites
+
 A running Amazon EKS cluster.
 kubectl installed and configured to work with your EKS cluster.
 Helm installed and configured to work with your EKS cluster.
@@ -163,6 +164,6 @@ helm install flink8schart-test flink8schart
 ```
 kubectl get svc flink-jobmanager-rest -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
 ```
-4. Run this <EXTERNAL-IP>:8081
+4. Run this "EXTERNAL-IP":8081
 
 5. Using web ui Add your WordCount.jar in flink
