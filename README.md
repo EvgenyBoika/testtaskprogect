@@ -12,32 +12,33 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 
-2. Install the AWS CDK.
-
-```
-npm install -g aws-cdk
-```
-3. Configure the AWS CLI with your AWS credentials and region where you will deploy
+2. Configure the AWS CLI with your AWS credentials and region where you will deploy
 
 ```
 aws configure
 ```
-4. Install Python 3.7 or later
+3. Install Python 3.7 or later
 
 ```
 sudo apt update
 sudo apt install python3
 ```
 
-5. Install pip3.
+4. Install pip3.
 
 ```
 sudo apt install python3-pip
 ```
-6. Istall nodejs:
+5. Install nodejs:
 
 ```
-sudo apt install nodejs
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+6. Install the AWS CDK.
+
+```
+npm install -g aws-cdk
 ```
 Deployment Steps
 
