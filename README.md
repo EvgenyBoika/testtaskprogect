@@ -48,6 +48,16 @@ Deployment Steps
 git clone https://github.com/EvgenyBoika/testtaskprogect.git
 
 ```
+2. Go to cdkcode:
+
+```
+cd cdkcode
+```
+3. Create a new CDK project using Python:
+```
+cdk init app --language python
+```
+
 Deploy the application using the AWS CDK:
 
 ```
