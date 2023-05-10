@@ -91,7 +91,7 @@ Helm installed and configured to work with your EKS cluster.
 Deployment Steps
 1. Go to the Hello Kubernetes repository:
 ```
-cd hello-kubernetes/deploy/helm
+cd hellokubernetes/deploy/helm
 ```
 2. Deploy it using command:
 ```
