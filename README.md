@@ -46,7 +46,6 @@ Deployment Steps
 
 ```
 git clone https://github.com/EvgenyBoika/testtaskprogect.git
-
 ```
 2. Go to cdkcode:
 
