@@ -101,8 +101,9 @@ To access the application use this command (this is ip adress in your browser):
 ```
 kubectl get svc -n hello-kubernetes hello-kubernetes-hello-world -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
 ```
-Building the Flink WordCount Example
+Building the Flink WordCount Example (Optional)
 This guide will walk you through building the WordCount example from the Apache Flink project.
+(https://github.com/apache/flink/blob/master/flink-examples/flink-examples-streaming/pom.xml)
 
 Prerequisites
 1. Install the Java Development Kit (JDK) version 8 or later.
